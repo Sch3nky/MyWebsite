@@ -13,10 +13,13 @@
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
-  "name": "MyWebsite",
+  "name": "my_website",
   "packageManager": "npm@9.7.2",
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "next": "^13.4.9"
+  }
 }

@@ -1,0 +1,110 @@
+.container{
+    width: 100%;
+    background-color: hsl(210deg, 40%, 20%);
+    position: relative;
+    h1{
+        margin: 0 auto 40px auto;
+        padding-top: 30px;
+        text-align: center;
+        font-size: 35px;
+        font-weight: 400;
+        letter-spacing: 3px;
+    }
+    .companiesSlide{
+        margin: 0 auto 0 auto;
+        padding: 20px 0 70px 0;
+        max-width: 1440px;
+        height: fit-content;
+        width: 80%;
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        .company{
+            height: 100%;
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 225px;
+                height: auto;
+                transition-property: width padding;
+                transition-duration: 300ms;
+            }
+            &:hover{
+                img {
+                    width: 275px;
+                    height: auto;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 830px) {
+        h1{
+            margin: 0 40px 10px 40px;
+            padding-top: 20px;
+        }
+        .companiesSlide{
+            padding: 20px 0 40px 0;
+            .company{
+                img {
+                    width: 180px;
+                }
+                &:hover{
+                    img {
+                        width: 200px;
+                        height: auto;
+                    }
+                }
+            }
+        } 
+    }
+    @media screen and (max-width: 645px) {
+        h1{
+            margin: 0 40px 40px 40px;
+        }
+        .companiesSlide{
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 20px 0 40px 0;
+            .company{
+                img {
+                    width: 215px;
+                }
+                &:hover{
+                    img {
+                        width: 275px;
+                        height: auto;
+                    }
+                }
+            }
+        } 
+    }
+
+    @media screen and (max-width: 400px) {
+        h1{
+            font-size: 28px;
+            margin: 0 20px 20px 20px;
+        }
+        .companiesSlide{
+            gap: 30px;
+            width: 95%;
+            .company{
+                img {
+                    width: 150px;
+                }
+                &:hover{
+                    img {
+                        width: 175px;
+                        height: auto;
+                    }
+                }
+            }
+        } 
+    }
+}

@@ -1,0 +1,73 @@
+@import "../variables.scss";
+
+.container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    .background{
+        position: absolute;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 43%;
+        opacity: 35%;
+        text-align: center;
+        h1 {
+            color: $secondary-color;
+            font-size: 200px;
+            font-weight: 700;
+            margin: 0;
+        }
+        h2 {
+            color: $secondary-color;
+            margin: 0;
+            font-size: 40px;
+            font-weight: 300;
+        }
+    }
+
+    .game{
+        position: absolute;
+        width: 100%;
+        height: 93%;
+
+        transform: translate(-50%);
+        left: 50%;
+        top: 0;
+        .platform{
+            position: absolute;
+            transform: translate(-50%, 0);
+
+            left: 50%;
+            bottom: 20px;
+            width: 250px;
+            height: 40px;
+            border: 2px solid $secondary-color;
+            border-radius: 0px;
+        }
+
+        .ball{
+            position: absolute;
+            transform: translate(-50%, -50%);
+
+            border-radius: 100%;
+
+            height: 50px;
+            width: 50px;
+            
+            left: 50%;
+            bottom: 50px;
+            background-color: $secondary-color;
+        }
+    }
+
+    .gameFooter{
+        position: absolute;
+        width: 100%;
+        height: 7%;
+        background-color: $secondary-color;
+        transform: translate(-50%);
+        left: 50%;
+        bottom: 0;
+    }
+}

@@ -1,0 +1,60 @@
+@import "../../variables.scss";
+
+.footer{
+    padding: 40px 0 30px 0;
+    width: 100%;
+    position: relative;
+    .copyright{
+        font-weight: 200;
+        letter-spacing: 1.5px;
+        text-align: center;
+    }
+    .info{
+        border-top: 1px solid $footer-divider-color;
+        border-bottom: 1px solid $footer-divider-color;
+
+        width: 85%;
+        margin: 40px auto 20px auto;
+        padding: 40px 20px 35px 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        .footerLinks{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            gap: 30px;
+            a {
+                font-weight: 300;
+            }
+        }
+        .socials{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            gap: 15px;
+            a {
+                svg{
+                    height: 25px;
+                    width: auto;
+                }
+            }
+        }
+
+        @media screen and (max-width:550px) {
+            width: 95%;
+        }
+
+        @media screen and (max-width:410px) {
+            .footerLinks{
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

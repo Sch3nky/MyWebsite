@@ -1,0 +1,57 @@
+@import "../../variables.scss";
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 50px;
+    .item{
+        width: 300px;
+        flex-grow: 1;
+        min-height: 200px;
+        border-radius: 8px;
+        padding: 20px;
+
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition-duration: 200ms;
+        &:hover{
+            transform: scale(1.1);
+        }
+        .headline{
+            h2{
+                text-align: center;
+                letter-spacing: 4px;
+                font-weight: 500;
+                font-size: 30px;
+            }
+            margin-bottom: 30px;
+        }
+        .content{
+            ul{
+                list-style: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                row-gap: 15px;
+                column-gap: 10px;
+                li{
+                    padding: 5px 25px;
+                    font-weight: 300;
+                    letter-spacing: 2px;
+                    font-size: 19px;
+                    border-radius: 10px;
+                    background: rgba(241, 109, 65, 0);
+                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                    backdrop-filter: blur(9.6px);
+                    -webkit-backdrop-filter: blur(9.6px);
+                    border: 1px solid rgba(241, 109, 65, 0.4);
+                }
+            }
+        }
+    }
+}

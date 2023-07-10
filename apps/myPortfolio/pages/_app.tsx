@@ -14,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <AlertProvider>
       <MainLayout>
         <CookieLayout>
+          
           <Component {...pageProps} />
         </CookieLayout>
       </MainLayout>

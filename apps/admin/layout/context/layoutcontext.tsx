@@ -7,9 +7,9 @@ export const LayoutProvider = ({ children }: ChildContainerProps) => {
         ripple: false,
         inputStyle: 'outlined',
         menuMode: 'static',
-        colorScheme: 'light',
-        theme: 'lara-light-indigo',
-        scale: 14
+        colorScheme: 'dark',
+        theme: 'bootstrap4-dark-blue',
+        scale: 13
     });
 
     const [layoutState, setLayoutState] = useState<LayoutState>({

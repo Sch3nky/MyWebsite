@@ -103,12 +103,16 @@ const Layout = ({ children }: ChildContainerProps) => {
         });
     }, []);
 
+    PrimeReact.ripple = true;
+
     useUnmountEffect(() => {
         unbindMenuOutsideClickListener();
         unbindProfileMenuOutsideClickListener();
     });
 
     const containerClass = classNames('layout-wrapper', {
+        'layout-theme-light': layoutConfig.colorScheme === 'dark',
+        'layout-theme-dark': layoutConfig.colorScheme === 'dark',
         'layout-overlay': layoutConfig.menuMode === 'overlay',
         'layout-static': layoutConfig.menuMode === 'static',
         'layout-static-inactive': layoutState.staticMenuDesktopInactive && layoutConfig.menuMode === 'static',
@@ -144,8 +148,6 @@ const Layout = ({ children }: ChildContainerProps) => {
                     <div className="layout-main">{children}</div>
                     <AppFooter />
                 </div>
-                <AppConfig />
-                <div className="layout-mask"></div>
             </div>
         </React.Fragment>
     );

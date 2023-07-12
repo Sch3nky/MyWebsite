@@ -3,6 +3,7 @@
     width: 100%;
     background: hsl(210, 40%, 20%);
     position: relative;
+
     .headline{
         padding-top: 30px;
         text-align: center;
@@ -18,13 +19,16 @@
         display: flex;
         flex-direction: column;
         gap: 80px;
+        @media screen and (max-width: 1184px) {
+            padding: 80px 30px;
+        }
     }
 }
 
 .navigation_line{
     position: absolute;
     bottom: 0;
-    height: calc(100% - 120px);
+    height: calc(100% - 100px);
     width: 100%;
     z-index: 0;
     &::after{

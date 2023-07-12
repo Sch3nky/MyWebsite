@@ -8,10 +8,10 @@ import CaseStudy from '@/Components/Main/Case-study'
 import CompaniesSlideShow from '@/Components/Main/Companies'
 import Coments from '@/Components/Main/Coments'
 
-import { MAIN_PAGE_DATA_API, REFERENCES_API } from '@/utils/api'
-import { MainPageData, Project, Reference } from '@/types/api'
+import { MAIN_PAGE_DATA_API, REFERENCES_API, SIMPLE_PROJECT_API} from '@/utils/api'
+import { MainPageData, Project, Reference, SimpleProject } from '@/types/api'
 
-export default function Home({ data, projects, references }:{data:MainPageData, projects: Project[], references: Reference[]}) {
+export default function Home({ data, projects, references }:{data:MainPageData, projects: SimpleProject[], references: Reference[]}) {
 
   function smoothScroll(id:string, duration:any) {
     const element = document.getElementById(id) as HTMLElement
@@ -57,7 +57,7 @@ export default function Home({ data, projects, references }:{data:MainPageData, 
       </div>
 
       {/* Case study */}
-      <CaseStudy id="CaseStudy" />
+      <CaseStudy id="CaseStudy" projects={projects}/>
 
       {/* My skills */}
       <Skills skills={data.experience} />
@@ -81,7 +81,10 @@ export async function getServerSideProps() {
 
   const reference_response = await fetch(REFERENCES_API)
   const references = await reference_response.json()
+
+  const simple_projects_response = await fetch(SIMPLE_PROJECT_API)
+  const simple_projects = await simple_projects_response.json()
  
   // Pass data to the page via props
-  return { props: { data, projects:[], references:references } }
+  return { props: { data, projects:simple_projects, references:references } }
 }

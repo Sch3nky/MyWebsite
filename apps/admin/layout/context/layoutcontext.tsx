@@ -8,7 +8,7 @@ export const LayoutProvider = ({ children }: ChildContainerProps) => {
         inputStyle: 'outlined',
         menuMode: 'static',
         colorScheme: 'dark',
-        theme: 'bootstrap4-dark-blue',
+        theme: 'md-dark-indigo',
         scale: 13
     });
 

@@ -11,18 +11,40 @@ export interface ContactMessage {
     message: string
 }
 
-//Main page data
+/* 
+    Project data types
+*/
+export interface ProjectTechnology {
+    name: string,
+    items: string[]
+}
+
+export interface SimpleProject{
+    id: number, 
+    short_description: string, 
+    name: string, 
+    project_page: string, 
+    image: string
+}
+
 export interface Project{
-    name:string,
-    text:string,
-    logo:string
+    id: number,
+    name: string,
+    image: string,
+    project_page: string,
+    url:string,
+    short_description: string,
+    description: string,
+    period: string,
+    role: string,
+    colors: string[],
+    technologies: ProjectTechnology[]
 }
 
-export interface Reference{
-    name:string,
-    text:string,
-}
 
+/* 
+    Home page types
+*/
 export interface Cooperation{
     name:string,
     logo:string
@@ -38,4 +60,9 @@ export interface MainPageData{
     about: string,
     cooperation: Cooperation[],
     experience: Experience[]
+}
+
+export interface Reference{
+    name:string,
+    text:string,
 }

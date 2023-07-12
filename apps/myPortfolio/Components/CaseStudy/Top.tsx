@@ -2,20 +2,27 @@ import { ArrowRight } from "react-bootstrap-icons";
 import TechnologiesCaseStudy from "./Technologies";
 import styles from "@/styles/Components/CaseStudy/top.module.scss"
 import { useRouter } from "next/router";
+import { ProjectTechnology } from "@/types/api";
+import { url } from "inspector";
 
-function TopCaseStudy() {
+interface Props{
+    name: string,
+    url: string,
+    technologie: ProjectTechnology[]
+}
+
+function TopCaseStudy(props:Props) {
     const router = useRouter() 
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>
-                <h1 className={styles.productName}>Inoprint.cz</h1>
-                <TechnologiesCaseStudy />
-                <button onClick={() => {router.push("https://inoprint.cz")}} className={styles.siteVisitButton}>
+                <h1 className={styles.productName}>{props.name}</h1>
+                <TechnologiesCaseStudy technologies={props.technologie} />
+                <button onClick={() => router.push(props.url)} className={styles.siteVisitButton}>
                     <div className={styles.button_mask}>
 
                     </div>
                     <p>Navšívit stránku <ArrowRight color="#E9EBEC" className={styles.arrow} /></p>
-                    
                 </button>
             </div>
             <div className={styles.divider}>

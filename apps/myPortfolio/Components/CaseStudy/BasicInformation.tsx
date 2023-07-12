@@ -1,47 +1,33 @@
 import styles from "@/styles/Components/CaseStudy/basicInformation.module.scss"
 
-function BasicInformationCaseStudy() {
+function BasicInformationCaseStudy({period, colors, role}:{period:string, colors:string[], role:string}) {
     return (
         <section className={styles.container}>
             <div className={styles.item}>
                 <div className={styles.headline}>
                     <h2>Období</h2>
                 </div>
-                <div className={styles.content}>
-                    Konec 2022 - Březen 2023
+                <div className={styles.content} dangerouslySetInnerHTML={{__html:period.replaceAll("\n", "<br/>")}}>
                 </div>
             </div>
 
-            <div className={styles.item}>
+            <div className={[styles.item, styles.colors].join(" ")}>
                 <div className={styles.headline}>
                     <h2>Barvy</h2>
                 </div>
                 <div className={styles.content}>
                     <div className={styles.colors}>
+                        {colors.map((color:string, key:number) => 
                         <div className={styles.color}>
-                            <div style={{backgroundColor: "#fffFFF"}}>
+                            <div style={{backgroundColor: color}}>
 
                             </div>
                             <p>
-                                #fffFFF
+                                {color.toUpperCase()}
                             </p>
                         </div>
-                        <div className={styles.color}>
-                            <div style={{backgroundColor: "#000000"}}>
-
-                            </div>
-                            <p>
-                                #000000
-                            </p>
-                        </div>
-                        <div className={styles.color}>
-                            <div style={{backgroundColor: "#F000F0"}}>
-
-                            </div>
-                            <p>
-                                #F000F0
-                            </p>
-                        </div>
+                        )}
+                        
                     </div>
                 </div>
             </div>
@@ -51,7 +37,7 @@ function BasicInformationCaseStudy() {
                     <h2>Moje Role</h2>
                 </div>
                 <div className={styles.content}>
-                    Full-Stack developer
+                    {role}
                 </div>
             </div>
         </section>

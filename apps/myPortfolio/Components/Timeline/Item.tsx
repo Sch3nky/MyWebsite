@@ -71,7 +71,7 @@ function TimelineItem(data:Props) {
                         {data.data.description}
                     </p>
                     <img className={styles.image} src={data.data.image} />
-                    <button className={styles.actionButton} >
+                    <button onClick={() => data.action()} className={styles.actionButton} >
                         <div className={styles.button_mask}>
 
                         </div>
